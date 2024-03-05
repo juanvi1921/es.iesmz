@@ -108,4 +108,46 @@ class EmpleadoBRTest {
         float resultadoEsperado = 1600;
         assertEquals(resultadoEsperado, resultadoReal, 0.01);
     }
+
+    @Test
+    void testCalculaSalarioBruto7() {
+        float resultadoReal = EmpleadoBR.calculaSalarioBruto(TipoEmpleado.encarregat, 999.99f, 3);
+        float resultadoEsperado = 1560;
+        assertEquals(resultadoEsperado, resultadoReal, 0.01);
+    }
+
+    @Test
+    void testCalculaSalarioBruto8() {
+        float resultadoReal = EmpleadoBR.calculaSalarioBruto(TipoEmpleado.encarregat, 500, 0);
+        float resultadoEsperado = 1500;
+        assertEquals(resultadoEsperado, resultadoReal, 0.01);
+    }
+
+    @Test
+    void testCalculaSalarioBruto9() {
+        float resultadoReal = EmpleadoBR.calculaSalarioBruto(TipoEmpleado.encarregat, 0, 8);
+        float resultadoEsperado = 1660;
+        assertEquals(resultadoEsperado, resultadoReal, 0.01);
+    }
+
+    @Test
+    void testCalculaSalarioBruto10() {
+        float resultadoReal = EmpleadoBR.calculaSalarioBruto(TipoEmpleado.venedor, -1, 8);
+        float resultadoEsperado = -1;
+        assertEquals(resultadoEsperado, resultadoReal, 0.01);
+    }
+
+    @Test
+    void testCalculaSalarioBruto11() {
+        float resultadoReal = EmpleadoBR.calculaSalarioBruto(TipoEmpleado.venedor, 1500, -1);
+        float resultadoEsperado = -1;
+        assertEquals(resultadoEsperado, resultadoReal, 0.01);
+    }
+
+    @Test
+    void testCalculaSalarioBruto12() {
+        float resultadoReal = EmpleadoBR.calculaSalarioBruto(null, 1500, 8);
+        float resultadoEsperado = -1;
+        assertEquals(resultadoEsperado, resultadoReal, 0.01);
+    }
 }
