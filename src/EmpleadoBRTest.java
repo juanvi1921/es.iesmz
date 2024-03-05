@@ -73,4 +73,39 @@ class EmpleadoBRTest {
         float resultadoEsperado = -1;
         assertEquals(resultadoEsperado, resultadoReal, 0.01);
     }
+
+    @Test
+    void testCalculaSalarioBruto2() {
+        float resultadoReal = EmpleadoBR.calculaSalarioBruto(TipoEmpleado.venedor, 2000, 8);
+        float resultadoEsperado = 1360;
+        assertEquals(resultadoEsperado, resultadoReal, 0.01);
+    }
+
+    @Test
+    void testCalculaSalarioBruto3() {
+        float resultadoReal = EmpleadoBR.calculaSalarioBruto(TipoEmpleado.venedor, 1500, 3);
+        float resultadoEsperado = 1260;
+        assertEquals(resultadoEsperado, resultadoReal, 0.01);
+    }
+
+    @Test
+    void testCalculaSalarioBruto4() {
+        float resultadoReal = EmpleadoBR.calculaSalarioBruto(TipoEmpleado.venedor, 1499.99f, 0);
+        float resultadoEsperado = 1100;
+        assertEquals(resultadoEsperado, resultadoReal, 0.01);
+    }
+
+    @Test
+    void testCalculaSalarioBruto5() {
+        float resultadoReal = EmpleadoBR.calculaSalarioBruto(TipoEmpleado.encarregat, 1250, 8);
+        float resultadoEsperado = 1760;
+        assertEquals(resultadoEsperado, resultadoReal, 0.01);
+    }
+
+    @Test
+    void testCalculaSalarioBruto6() {
+        float resultadoReal = EmpleadoBR.calculaSalarioBruto(TipoEmpleado.encarregat, 1000, 0);
+        float resultadoEsperado = 1600;
+        assertEquals(resultadoEsperado, resultadoReal, 0.01);
+    }
 }
