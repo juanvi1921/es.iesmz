@@ -26,12 +26,14 @@ public class EmpleadoBR {
 
     public static float calculaSalarioNeto(float salarioBruto) {
         float retencion = 0;
-        if (salarioBruto > 1000 && salarioBruto < 1500) {
+        if (salarioBruto >= 1000 && salarioBruto < 1500) {
             retencion = 16;
         } else if (salarioBruto >= 1500) {
             retencion = 18;
         } else if (salarioBruto < 0) {
             return -1;
+        } else {
+            return salarioBruto;
         }
         return salarioBruto * (1 - (retencion / 100));
     }
